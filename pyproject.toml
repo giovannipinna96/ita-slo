@@ -1,0 +1,36 @@
+[project]
+name = "ita-slo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "bertopic>=0.17.4",
+    "gensim>=4.4.0",
+    "hdbscan>=0.8.40",
+    "it-core-news-lg",
+    "jsonlines>=4.0.0",
+    "matplotlib>=3.10.7",
+    "matplotlib-venn>=1.1.2",
+    "nltk>=3.9.2",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "plotly>=6.5.0",
+    "pyldavis>=3.4.1",
+    "regex>=2025.11.3",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "sentence-transformers>=5.1.2",
+    "sl-core-news-sm",
+    "spacy>=3.8.11",
+    "stanza>=1.11.0",
+    "torch>=2.9.1",
+    "tqdm>=4.67.1",
+    "transformers>=4.57.3",
+    "umap-learn>=0.5.9.post2",
+    "wordcloud>=1.9.4",
+]
+
+[tool.uv.sources]
+it-core-news-lg = { url = "https://github.com/explosion/spacy-models/releases/download/it_core_news_lg-3.8.0/it_core_news_lg-3.8.0-py3-none-any.whl" }
+sl-core-news-sm = { url = "https://github.com/explosion/spacy-models/releases/download/sl_core_news_sm-3.8.0/sl_core_news_sm-3.8.0-py3-none-any.whl" }
