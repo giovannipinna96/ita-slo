@@ -1,0 +1,139 @@
+{
+  "name": "Edinost",
+  "n_articles": 5,
+  "sentiment": {
+    "counts": {
+      "positive": 2,
+      "neutral": 0,
+      "negative": 3
+    },
+    "percentages": {
+      "positive": 40.0,
+      "neutral": 0.0,
+      "negative": 60.0
+    },
+    "avg_confidence": 0.8588632837387669,
+    "total_articles": 5,
+    "total_sentences_analyzed": 72,
+    "model_used": "MilaNLProc/feel-it-italian-sentiment",
+    "analysis_mode": "sentence-level"
+  },
+  "tfidf": {
+    "global_keywords": [
+      [
+        "del",
+        0.22238101659804982
+      ],
+      [
+        "la",
+        0.21914451550793101
+      ],
+      [
+        "per",
+        0.1757762467623954
+      ],
+      [
+        "dell",
+        0.16620298963359054
+      ],
+      [
+        "l",
+        0.1632195634577347
+      ],
+      [
+        "c",
+        0.14974253911401667
+      ],
+      [
+        "ha",
+        0.14523043263570817
+      ],
+      [
+        "chea",
+        0.14054260029800392
+      ],
+      [
+        "con",
+        0.13770850904695703
+      ],
+      [
+        "scolastica",
+        0.1145631235188732
+      ],
+      [
+        "scuol",
+        0.11303307415783188
+      ],
+      [
+        "all",
+        0.1119259946122581
+      ],
+      [
+        "m",
+        0.1024924244543002
+      ],
+      [
+        "sona",
+        0.10204477101633282
+      ],
+      [
+        "hanna",
+        0.0940052917642113
+      ],
+      [
+        "alle",
+        0.08327798199274751
+      ],
+      [
+        "già",
+        0.07866757184567903
+      ],
+      [
+        "r",
+        0.07054135820022898
+      ],
+      [
+        "certificata",
+        0.07054135820022898
+      ],
+      [
+        "meti",
+        0.06978987344089871
+      ]
+    ],
+    "vocabulary_size": 50,
+    "n_articles": 5,
+    "n_features": 50
+  },
+  "topics_lda": {
+    "topics": {
+      "0": [
+        "del",
+        "la",
+        "ha",
+        "con",
+        "sona",
+        "meti",
+        "già",
+        "signor",
+        "c.m",
+        "hann"
+      ],
+      "1": [
+        "la",
+        "con",
+        "chea",
+        "per",
+        "sati",
+        "dell",
+        "scolastica",
+        "del",
+        "al",
+        "noster"
+      ]
+    },
+    "num_topics": 2,
+    "coherence_score": 0.22519221195970573,
+    "n_articles": 5
+  }
+}

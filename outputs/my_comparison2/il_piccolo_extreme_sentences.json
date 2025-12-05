@@ -1,0 +1,131 @@
+{
+  "source": "Il Piccolo",
+  "total_sentences": 659,
+  "positive_count": 197,
+  "negative_count": 462,
+  "neutral_count": 0,
+  "top_positive": [
+    {
+      "rank": 1,
+      "sentence": "Quest'anno le canzoni sono parecchie e applauditissime.",
+      "confidence": 0.9998,
+      "article": "CRONACA PER TELEGRAFO"
+    },
+    {
+      "rank": 2,
+      "sentence": "LETTE E OROO!",
+      "confidence": 0.9998,
+      "article": "IL MAESTRO PRIV.\nVia dell'Orologio V. Gmeinhöck Vi"
+    },
+    {
+      "rank": 3,
+      "sentence": "Turati parlò meravigliosamente, per due ore rapidissimo come sempre.",
+      "confidence": 0.9998,
+      "article": "IL CONGRESSO SOCIALISTA ITALIANO"
+    },
+    {
+      "rank": 4,
+      "sentence": "Il ministro ottenne un successo entusiastico, rivolgendo un discorso famigliare, ma efficacissimo agli intervenuti, rammentando che fu loro antico collega.",
+      "confidence": 0.9998,
+      "article": "Le riforme del ministro Nasi"
+    },
+    {
+      "rank": 5,
+      "sentence": "— Oià! ragazzi!",
+      "confidence": 0.9998,
+      "article": "LA FAME DELL'ORO\n(Romanzo d'appendice - Continua)"
+    },
+    {
+      "rank": 6,
+      "sentence": "Ci dovete tutto il vostro tempo, tutte le vostre ore... le vostre notti e i vostri giorni!",
+      "confidence": 0.9998,
+      "article": "LA FAME DELL'ORO\n(Romanzo d'appendice - VII SEGUIT"
+    },
+    {
+      "rank": 7,
+      "sentence": "Turati continua brillantemente esaminando in che consistano le due tendenze, e le trova assolutamente identiche.",
+      "confidence": 0.9998,
+      "article": "IL CONGRESSO SOCIALISTA ITALIANO"
+    },
+    {
+      "rank": 8,
+      "sentence": "Non fare complimenti!",
+      "confidence": 0.9998,
+      "article": "LA FAME DELL'ORO\n(Romanzo d'appendice - Continua)"
+    },
+    {
+      "rank": 9,
+      "sentence": "Lombroso, esaminando sull'Avanti il nuovo regolamento scolastico elaborato dal ministro Nasi, lo loda in quasi tutte le sue parti.",
+      "confidence": 0.9998,
+      "article": "Le riforme del ministro Nasi"
+    },
+    {
+      "rank": 10,
+      "sentence": "Geotti, si è reso benemerito e ha dato prove di essere uno dei migliori avuti dalla nostra borgata.",
+      "confidence": 0.9998,
+      "article": "Da AIELLO."
+    }
+  ],
+  "top_negative": [
+    {
+      "rank": 1,
+      "sentence": "Intendiamoci bene - dice il sullodato del jingoismo - i generali boeri non sono qui come delegati, giacchè non rappresentano più nulla; la pace è stata firmata e la loro occupazione è finita come quella di Otello!",
+      "confidence": 0.9998,
+      "article": "I GENERALI BOERI e il Chamberlain"
+    },
+    {
+      "rank": 2,
+      "sentence": "Non tutto il sesso femminile americano se n'è offeso: anzi, appena la signora Roosevelt, moglie del presidente, e le \"temperanti cristiane\" dimostrarono il loro orrore al granduca Boris, la duchessa Marlborough, la signora Astor, e non so quante bellezze e miliardarie americane si affrettarono a ricercarlo e a fargli grandi feste.",
+      "confidence": 0.9998,
+      "article": "IL GRANDUCA BORIS e le donne americane."
+    },
+    {
+      "rank": 3,
+      "sentence": "Bastano queste cifre a provare quanto sia ingiusto che la lingua d'insegnamento della i. r.",
+      "confidence": 0.9998,
+      "article": "Da GORIZIA."
+    },
+    {
+      "rank": 4,
+      "sentence": "Da qualche anno i sobillatori ed odiatori dell'italianità facevano tutte le pratiche, lecite ed illecite, perchè venisse chiusa la scuola popolare italiana di Piedimonte, scuola che si imponeva da sè per il notevole numero dei frequentatori.",
+      "confidence": 0.9998,
+      "article": "Da GORIZIA."
+    },
+    {
+      "rank": 5,
+      "sentence": "Simili questioni non sorgono là dove si lavora, non nelle forti organizzazioni, ma nei circoletti dei chiacchieroni disoccupati.",
+      "confidence": 0.9998,
+      "article": "IL CONGRESSO SOCIALISTA ITALIANO"
+    },
+    {
+      "rank": 6,
+      "sentence": "L'odio che determinò la tragedia, aveva avuto origine da una baruffa scoppiata tempo addietro per futili motivi tra la Inserillo e due sue figlie, da una parte, e la madre della Giuseppina con le sue figlie Giuseppina e Francesca dall'altra.",
+      "confidence": 0.9998,
+      "article": "CRONACA PER TELEGRAFO"
+    },
+    {
+      "rank": 7,
+      "sentence": "Leyds, affermarono è assurdo: - i generali boeri non sono nè possono essere a Londra per tentare di alterare in loro favore le condizioni della capitolazione decisa a Vereeningen e firmata a Pretoria!",
+      "confidence": 0.9998,
+      "article": "I GENERALI BOERI e il Chamberlain"
+    },
+    {
+      "rank": 8,
+      "sentence": "Il desolato marito Gian Giacomo, i figli Vittorio, Erminia, Elvira ed Arturo, nonchè la nuora Itala nata Boiti, dànno il triste annunzio ai parenti, amici e conoscenti.",
+      "confidence": 0.9998,
+      "article": "NECROLOGI"
+    },
+    {
+      "rank": 9,
+      "sentence": "V.) Qui regna calma perfetta, però dalla provincia giungono continuamente notizie di dimostrazioni anti-serbe e di eccessi contro le proprietà dei cittadini serbi.",
+      "confidence": 0.9998,
+      "article": "A ZAGABRIA"
+    },
+    {
+      "rank": 10,
+      "sentence": "Ebbene, su 4945 stabilimenti congregazionisti esistenti in Bretagna, il Governo persecutore ne ha fatti chiudere 55; vale a dire che nel 1861 sotto l'Impero c'erano in Bretagna 858 stabilimenti congregazionisti, ed oggi, dopo la strage ordinata da Combes, ce ne sono 4032 di più!\n\n[Content continues with details about church properties and the Vandea situation...]\n\n[Additional articles follow including \"GLI AGRARI UNGHERESI e il compromesso a.-u.\", \"Il Marocco si europeizza!\", and various other news items]",
+      "confidence": 0.9998,
+      "article": "VANDEA."
+    }
+  ]
+}

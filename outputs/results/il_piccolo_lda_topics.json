@@ -1,0 +1,103 @@
+{
+  "topics": {
+    "0": [
+      "medico",
+      "parigi",
+      "camera",
+      "capo",
+      "figlio",
+      "dovere",
+      "signore",
+      "corrente",
+      "potere",
+      "fare"
+    ],
+    "1": [
+      "partito",
+      "ordine",
+      "piazza",
+      "si",
+      "applauso",
+      "il",
+      "perché",
+      "ferito",
+      "congresso",
+      "venire"
+    ],
+    "2": [
+      "pom",
+      "n.",
+      "s.",
+      "ministero",
+      "società",
+      "lettera",
+      "si",
+      "ant",
+      "scrivere",
+      "posta"
+    ],
+    "3": [
+      "insegnante",
+      "roma",
+      "ministero",
+      "unione",
+      "visitare",
+      "esposizione",
+      "scuola",
+      "il",
+      "classe",
+      "tenere"
+    ],
+    "4": [
+      "corso",
+      "signore",
+      "militare",
+      "scuola",
+      "classe",
+      "tedesco",
+      "poco",
+      "italiano",
+      "n.",
+      "servizio"
+    ],
+    "5": [
+      "scuola",
+      "italiano",
+      "tedesco",
+      "numero",
+      "i.",
+      "perché",
+      "nè",
+      "né",
+      "ragazzo",
+      "uso"
+    ],
+    "6": [
+      "russo",
+      "giovanni",
+      "tecnico",
+      "congresso",
+      "prezzo",
+      "giuseppe",
+      "sera",
+      "pubblico",
+      "migliore",
+      "dare"
+    ],
+    "7": [
+      "a.",
+      "il",
+      "a",
+      "venire",
+      "seduta",
+      "tenere",
+      "i.",
+      "ministero",
+      "chiamare",
+      "direzione"
+    ]
+  },
+  "num_topics": 8,
+  "coherence_score": 0.3457098402142396,
+  "n_articles": 59
+}

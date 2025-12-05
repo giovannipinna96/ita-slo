@@ -1,0 +1,151 @@
+{
+  "name": "Il Piccolo",
+  "n_articles": 59,
+  "sentiment": {
+    "counts": {
+      "positive": 18,
+      "neutral": 0,
+      "negative": 41
+    },
+    "percentages": {
+      "positive": 30.508474576271187,
+      "neutral": 0.0,
+      "negative": 69.49152542372882
+    },
+    "avg_confidence": 0.8848190365757915,
+    "total_articles": 59,
+    "total_sentences_analyzed": 659,
+    "model_used": "MilaNLProc/feel-it-italian-sentiment",
+    "analysis_mode": "sentence-level"
+  },
+  "tfidf": {
+    "global_keywords": [
+      [
+        "a",
+        0.08952797666594053
+      ],
+      [
+        "n",
+        0.07186790745547825
+      ],
+      [
+        "roma",
+        0.069954710718623
+      ],
+      [
+        "tedesco",
+        0.05359055855929206
+      ],
+      [
+        "società",
+        0.05337418844102416
+      ],
+      [
+        "venire",
+        0.04939101479841838
+      ],
+      [
+        "i",
+        0.048440504743531995
+      ],
+      [
+        "dare",
+        0.04824967693680856
+      ],
+      [
+        "il",
+        0.04808535154324516
+      ],
+      [
+        "ministero",
+        0.0467991507240958
+      ],
+      [
+        "congresso",
+        0.04527568061019305
+      ],
+      [
+        "direzione",
+        0.044860934822469424
+      ],
+      [
+        "piazza",
+        0.043674668373647564
+      ],
+      [
+        "pubblico",
+        0.04282386585025145
+      ],
+      [
+        "s",
+        0.042593256371829265
+      ],
+      [
+        "si",
+        0.04179688827631261
+      ],
+      [
+        "italiano",
+        0.04152081787040863
+      ],
+      [
+        "fare",
+        0.04112728223157608
+      ],
+      [
+        "russo",
+        0.040818204665337324
+      ],
+      [
+        "pom",
+        0.039285271808568126
+      ]
+    ],
+    "vocabulary_size": 50,
+    "n_articles": 59,
+    "n_features": 50
+  },
+  "topics_lda": {
+    "topics": {
+      "0": [
+        "signore",
+        "capo",
+        "piazza",
+        "russo",
+        "il",
+        "si",
+        "a.",
+        "i.",
+        "a",
+        "figlio"
+      ],
+      "1": [
+        "italiano",
+        "scuola",
+        "medico",
+        "tedesco",
+        "camera",
+        "parigi",
+        "corso",
+        "pom",
+        "corrente",
+        "ferito"
+      ],
+      "2": [
+        "partito",
+        "il",
+        "ordine",
+        "si",
+        "venire",
+        "congresso",
+        "seduta",
+        "applauso",
+        "perché",
+        "società"
+      ]
+    },
+    "num_topics": 3,
+    "coherence_score": 0.3578131184324738,
+    "n_articles": 59
+  }
+}

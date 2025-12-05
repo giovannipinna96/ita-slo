@@ -1,0 +1,131 @@
+{
+  "source": "Edinost",
+  "total_sentences": 72,
+  "positive_count": 37,
+  "negative_count": 35,
+  "neutral_count": 0,
+  "top_positive": [
+    {
+      "rank": 1,
+      "sentence": "Trionfo dell'idea nazionale\n========================================\n\nÈ stato il più splendido trionfo dell'idea nazionale! — Ci sembra che con queste parole abbiamo descritto nel modo più preciso il modo splendido in cui si è svolta la festa del 35° anniversario della sala di lettura a Canale.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 2,
+      "sentence": "La festa di Canale rimarrà a lungo nella memoria di tutti i partecipanti come una delle più belle manifestazioni dell'unità e della forza nazionale slovena.\n\n========================================",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 3,
+      "sentence": "L'atmosfera durante tutta la festa era entusiasta e fraterna.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 4,
+      "sentence": "Il presidente della sala di lettura, signor Giovanni Mozetič, aprì la festa con un discorso caloroso, nel quale sottolineò il significato dell'anniversario e ringraziò tutti coloro che avevano contribuito al fiorire della sala di lettura.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 5,
+      "sentence": "L'intera popolazione era in movimento, tutti erano in abito festivo, e dai volti di tutti traspariva la gioia e l'orgoglio nazionale.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 6,
+      "sentence": "L'uva resiste ancora, tuttavia rimarrà piccola se non arriva pioggia a breve.\n\n* Affare Wallburg\n\nÈ passato quasi un anno da quando l'affare Wallburg ha suscitato una sensazione generale in tutta Europa.",
+      "confidence": 0.9997,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    },
+    {
+      "rank": 7,
+      "sentence": "Sì, il cielo stesso era con noi, perché limpido come un occhio di pesce guardava soddisfatto il popolo che celebrava una bella, onesta festa!",
+      "confidence": 0.9997,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 8,
+      "sentence": "Haässler da Brno e la signorina Kreis, nuova ingenua da Praga, hanno già imparato abbastanza sloveno da recitare già nelle prime rappresentazioni in ruoli importanti.",
+      "confidence": 0.9997,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    },
+    {
+      "rank": 9,
+      "sentence": "Chi vuole ci dica pure là nella soleggiata Gorizia che siamo \"confusi\", ma noi diciamo comunque: a Canale domenica la nostra idea nazionale ha celebrato il suo trionfo.",
+      "confidence": 0.9997,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 10,
+      "sentence": "Il guardaroba è stato arricchito durante le vacanze, e il sig.",
+      "confidence": 0.9997,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    }
+  ],
+  "top_negative": [
+    {
+      "rank": 1,
+      "sentence": "Il popolo che domenica era riunito a Canale può guardare con disprezzo orgoglioso a coloro che dalle bassezze della loro opinione lo avevano già in anticipo etichettato come ubriaconi e — no, questa brutta parola rimanga nella penna, perché è vergognosa solo per coloro che l'hanno scritta — da qualche parte.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 2,
+      "sentence": "Fino all'inizio della stagione, che si aprirà il 27 c.m., si preparano 4 drammi.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    },
+    {
+      "rank": 3,
+      "sentence": "E si facciano pure sentire con la loro voce rauca coloro che si sono messi al servizio dello straniero, che vogliono che persino nel tempio di Dio lo straniero sia il padrone e il nostro popolo lo schiavo.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 4,
+      "sentence": "Questo però ha fatto arrabbiare talmente Vovk che ha estratto un coltello e gli ha tagliato con esso la pancia di Obersnel così profondamente che gli sono uscite le viscere.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE DAL RESTO DEL LITORALE"
+    },
+    {
+      "rank": 5,
+      "sentence": "Non si udì una parola sconveniente, non si vide un ubriaco.",
+      "confidence": 0.9998,
+      "article": "FESTEGGIAMENTO A CANALE"
+    },
+    {
+      "rank": 6,
+      "sentence": "L'acqua nei pozzi si è prosciugata già 14 giorni fa.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    },
+    {
+      "rank": 7,
+      "sentence": "L'erba al sole è bruciata, le foglie sugli alberi sono annerite e la frutta è avvizzita.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    },
+    {
+      "rank": 8,
+      "sentence": "Staudinger è accusato di frode.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE DALLA CARNIOLA"
+    },
+    {
+      "rank": 9,
+      "sentence": "========================================\n\nVescovo in pericolo\n\nBUDAPEST 9. (B) Una carrozza a quattro cavalli, nella quale viaggiava il vescovo di Raab, conte Szechanyi, stava per essere investita da un vagone del tram elettrico a Marezfalva.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE TELEGRAFICHE"
+    },
+    {
+      "rank": 10,
+      "sentence": "========================================\n\nX Pestaggio a Tomaj\n\nDa Tomaj ci scrivono: Domenica c'è stata qui una processione per la pioggia.",
+      "confidence": 0.9998,
+      "article": "NOTIZIE DAL RESTO DEL LITORALE"
+    }
+  ]
+}

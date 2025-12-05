@@ -1,0 +1,632 @@
+{
+  "preprocessing": {
+    "il_piccolo_articles": 59,
+    "edinost_articles": 7,
+    "il_piccolo_stats": {
+      "total_articles": 59,
+      "total_tokens": 5597,
+      "vocabulary_size": 2966,
+      "avg_article_length": 94.86440677966101,
+      "min_article_length": 9,
+      "max_article_length": 840
+    },
+    "edinost_stats": {
+      "total_articles": 7,
+      "total_tokens": 3589,
+      "vocabulary_size": 1763,
+      "avg_article_length": 512.7142857142857,
+      "min_article_length": 70,
+      "max_article_length": 1921
+    }
+  },
+  "tfidf": {
+    "il_piccolo": {
+      "global_keywords": [
+        [
+          "a",
+          0.07565821194883657
+        ],
+        [
+          "prezzo",
+          0.059514886902746256
+        ],
+        [
+          "roma",
+          0.05665380476770837
+        ],
+        [
+          "n",
+          0.05600033043755527
+        ],
+        [
+          "tedesco",
+          0.04628626703657908
+        ],
+        [
+          "i",
+          0.04215568230829032
+        ],
+        [
+          "recare",
+          0.04125486306851015
+        ],
+        [
+          "società",
+          0.04117777814214441
+        ],
+        [
+          "venire",
+          0.039727401050237955
+        ],
+        [
+          "il",
+          0.03946946362585959
+        ],
+        [
+          "piazza",
+          0.03920131283141242
+        ],
+        [
+          "ministero",
+          0.03831015973208319
+        ],
+        [
+          "s",
+          0.03815542771977293
+        ],
+        [
+          "fare",
+          0.037617301297742135
+        ],
+        [
+          "si",
+          0.03695074863076612
+        ],
+        [
+          "congresso",
+          0.03527604204456929
+        ],
+        [
+          "italiano",
+          0.03511431261530145
+        ],
+        [
+          "chiedere",
+          0.03408646509482069
+        ],
+        [
+          "dare",
+          0.03345730588088096
+        ],
+        [
+          "russo",
+          0.03324526548515353
+        ]
+      ],
+      "vocabulary_size": 100,
+      "n_articles": 59,
+      "n_features": 100
+    },
+    "edinost": {
+      "global_keywords": [
+        [
+          "c",
+          0.13372464290360914
+        ],
+        [
+          "ta",
+          0.1328381265339632
+        ],
+        [
+          "svoj",
+          0.12925475577353143
+        ],
+        [
+          "ura",
+          0.1263279491778646
+        ],
+        [
+          "m",
+          0.12125670573892582
+        ],
+        [
+          "šola",
+          0.10881743782855811
+        ],
+        [
+          "narod",
+          0.10233998673914971
+        ],
+        [
+          "t",
+          0.10020107329744235
+        ],
+        [
+          "september",
+          0.09237793353335337
+        ],
+        [
+          "rešiti",
+          0.08840623754063703
+        ],
+        [
+          "nov",
+          0.08583346106234623
+        ],
+        [
+          "še",
+          0.08313097785167853
+        ],
+        [
+          "k",
+          0.07913963688575405
+        ],
+        [
+          "biti",
+          0.07537669636582946
+        ],
+        [
+          "odbor",
+          0.07484357515998706
+        ],
+        [
+          "san",
+          0.07293189957965215
+        ],
+        [
+          "otrok",
+          0.07274235677266022
+        ],
+        [
+          "popoluden",
+          0.07271737975417408
+        ],
+        [
+          "društvo",
+          0.07247900281067227
+        ],
+        [
+          "znašati",
+          0.0696872013247789
+        ]
+      ],
+      "vocabulary_size": 100,
+      "n_articles": 7,
+      "n_features": 100
+    }
+  },
+  "topic_modeling": {
+    "il_piccolo": {
+      "topics": {
+        "0": [
+          "medico",
+          "parigi",
+          "camera",
+          "capo",
+          "figlio",
+          "dovere",
+          "signore",
+          "corrente",
+          "potere",
+          "fare"
+        ],
+        "1": [
+          "partito",
+          "ordine",
+          "piazza",
+          "si",
+          "applauso",
+          "il",
+          "perché",
+          "ferito",
+          "congresso",
+          "venire"
+        ],
+        "2": [
+          "pom",
+          "n.",
+          "s.",
+          "ministero",
+          "società",
+          "lettera",
+          "si",
+          "ant",
+          "scrivere",
+          "posta"
+        ],
+        "3": [
+          "insegnante",
+          "roma",
+          "ministero",
+          "unione",
+          "visitare",
+          "esposizione",
+          "scuola",
+          "il",
+          "classe",
+          "tenere"
+        ],
+        "4": [
+          "corso",
+          "signore",
+          "militare",
+          "scuola",
+          "classe",
+          "tedesco",
+          "poco",
+          "italiano",
+          "n.",
+          "servizio"
+        ],
+        "5": [
+          "scuola",
+          "italiano",
+          "tedesco",
+          "numero",
+          "i.",
+          "perché",
+          "nè",
+          "né",
+          "ragazzo",
+          "uso"
+        ],
+        "6": [
+          "russo",
+          "giovanni",
+          "tecnico",
+          "congresso",
+          "prezzo",
+          "giuseppe",
+          "sera",
+          "pubblico",
+          "migliore",
+          "dare"
+        ],
+        "7": [
+          "a.",
+          "il",
+          "a",
+          "venire",
+          "seduta",
+          "tenere",
+          "i.",
+          "ministero",
+          "chiamare",
+          "direzione"
+        ]
+      },
+      "num_topics": 8,
+      "coherence_score": 0.3457098402142396,
+      "n_articles": 59
+    },
+    "edinost": {
+      "topics": {
+        "0": [
+          "narod",
+          "svoj",
+          "ta",
+          "biti",
+          "naroden",
+          "še",
+          "naš",
+          "ves",
+          "hoteti",
+          "imeti"
+        ],
+        "1": [
+          "m.",
+          "ura",
+          "t.",
+          "nov",
+          "svoj",
+          "odbor",
+          "občen",
+          "društvo",
+          "popoluden",
+          "škof"
+        ],
+        "2": [
+          "šola",
+          "otrok",
+          "slovenski",
+          "c.",
+          "nemški",
+          "naš",
+          "imeti",
+          "še",
+          "trst",
+          "ta"
+        ],
+        "3": [
+          "c.",
+          "pripravnica",
+          "k.",
+          "šola",
+          "spričevati",
+          "ljudski",
+          "učenec",
+          "vodstvo",
+          "september",
+          "pričeti"
+        ],
+        "4": [
+          "narod",
+          "svoj",
+          "biti",
+          "ta",
+          "naroden",
+          "še",
+          "ves",
+          "slava",
+          "občinstvo",
+          "naš"
+        ],
+        "5": [
+          "ta",
+          "svoj",
+          "točka",
+          "sedanji",
+          "red",
+          "ter",
+          "rešiti",
+          "še",
+          "vprašanje",
+          "razpolaga"
+        ]
+      },
+      "num_topics": 6,
+      "coherence_score": 0.3088548323509278,
+      "n_articles": 7
+    }
+  },
+  "clustering": {
+    "il_piccolo": {
+      "method": "kmeans",
+      "n_clusters": 5,
+      "cluster_stats": {
+        "0": {
+          "size": 9,
+          "top_words": [
+            "ministero",
+            "società",
+            "i.",
+            "il",
+            "venire",
+            "lettera",
+            "si",
+            "posta",
+            "scrivere",
+            "a"
+          ],
+          "dominant_topic": 2,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "Le riforme del ministro Nasi",
+            "La Russia insiste per passare gli stretti.",
+            "Le gare ginnastiche tedesche e czeche di Maehrisch-Ostrau."
+          ]
+        },
+        "1": {
+          "size": 16,
+          "top_words": [
+            "ferri",
+            "turati",
+            "il",
+            "partito",
+            "si",
+            "ordine",
+            "perché",
+            "capo",
+            "tendenza",
+            "parigi"
+          ],
+          "dominant_topic": 0,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "IL CONGRESSO SOCIALISTA ITALIANO",
+            "I GENERALI BOERI e il Chamberlain",
+            "PALERMO UNITARIA"
+          ]
+        },
+        "2": {
+          "size": 24,
+          "top_words": [
+            "serbo",
+            "medico",
+            "camera",
+            "venire",
+            "ferito",
+            "congresso",
+            "il",
+            "a.",
+            "croato",
+            "diritto"
+          ],
+          "dominant_topic": 2,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "A ZAGABRIA",
+            "I GERMANIZZATORI A CONGRESSO",
+            "CONGRESSO DELLE CAMERE MEDICHE IN AUSTRIA."
+          ]
+        },
+        "3": {
+          "size": 4,
+          "top_words": [
+            "roma",
+            "imperatore",
+            "visita",
+            "rivolgare",
+            "n.",
+            "leva",
+            "telegrafano",
+            "berlino",
+            "patria",
+            "guglielmo"
+          ],
+          "dominant_topic": 6,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "GUGLIELMO II A ROMA",
+            "La svizzera autorizzata a batter nuova moneta.",
+            "Conferenza di ministri."
+          ]
+        },
+        "4": {
+          "size": 6,
+          "top_words": [
+            "scuola",
+            "italiano",
+            "tedesco",
+            "corso",
+            "tecnico",
+            "lingua",
+            "figlio",
+            "classe",
+            "numero",
+            "pom"
+          ],
+          "dominant_topic": 5,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "Congresso di tecnici edili.",
+            "ISTITUTO RAVÀ",
+            "COLLEGIO FEMMINILE UCCELLIS - UDINE\n(Anno XXXIV) Anno scolastico 1902-1903"
+          ]
+        }
+      }
+    },
+    "edinost": {
+      "method": "kmeans",
+      "n_clusters": 4,
+      "cluster_stats": {
+        "0": {
+          "size": 1,
+          "top_words": [
+            "dan",
+            "m.",
+            "nov",
+            "afera",
+            "staudinger",
+            "t.",
+            "gg.",
+            "suša",
+            "vipavsko",
+            "wallburg"
+          ],
+          "dominant_topic": 1,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "VESTI IZ KRANJSKE"
+          ]
+        },
+        "1": {
+          "size": 2,
+          "top_words": [
+            "šola",
+            "c.",
+            "slovenski",
+            "otrok",
+            "nemški",
+            "naš",
+            "imeti",
+            "laški",
+            "še",
+            "trst"
+          ],
+          "dominant_topic": 2,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "TRŽAŠKE VESTI",
+            "OGLASI IN REKLAME"
+          ]
+        },
+        "2": {
+          "size": 2,
+          "top_words": [
+            "ura",
+            "odbor",
+            "dan",
+            "tomaj",
+            "procesija",
+            "krčma",
+            "leten",
+            "vovk",
+            "obersnel",
+            "močen"
+          ],
+          "dominant_topic": 1,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "VESTI IZ OSTALE PRIMORSKE",
+            "BRZOJAVNA POROČILA"
+          ]
+        },
+        "3": {
+          "size": 2,
+          "top_words": [
+            "narod",
+            "ta",
+            "svoj",
+            "biti",
+            "italija",
+            "naroden",
+            "zastava",
+            "še",
+            "kanal",
+            "kateri"
+          ],
+          "dominant_topic": 4,
+          "dominant_sentiment": null,
+          "sample_titles": [
+            "SLAVNOST V KANALU",
+            "POLITIČNI PREGLED"
+          ]
+        }
+      }
+    }
+  },
+  "sentiment": {
+    "il_piccolo": {
+      "counts": {
+        "positive": 18,
+        "neutral": 0,
+        "negative": 41
+      },
+      "percentages": {
+        "positive": 30.508474576271187,
+        "neutral": 0.0,
+        "negative": 69.49152542372882
+      },
+      "avg_confidence": 0.884538273025416,
+      "total_articles": 59,
+      "total_sentences_analyzed": 655,
+      "model_used": "MilaNLProc/feel-it-italian-sentiment",
+      "analysis_mode": "sentence-level"
+    },
+    "edinost": {
+      "counts": {
+        "positive": 0,
+        "neutral": 6,
+        "negative": 1
+      },
+      "percentages": {
+        "positive": 0.0,
+        "neutral": 85.71428571428571,
+        "negative": 14.285714285714285
+      },
+      "avg_confidence": 0.7495194441905244,
+      "total_articles": 7,
+      "total_sentences_analyzed": 292,
+      "model_used": "classla/xlm-r-parlasent",
+      "analysis_mode": "sentence-level"
+    }
+  },
+  "comparative": {
+    "n_topics_a": 8,
+    "n_topics_b": 6,
+    "n_common_topics": 0,
+    "n_unique_to_a": 8,
+    "n_unique_to_b": 6
+  }
+}

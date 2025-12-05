@@ -1,0 +1,116 @@
+{
+  "method": "kmeans",
+  "n_clusters": 5,
+  "cluster_stats": {
+    "0": {
+      "size": 9,
+      "top_words": [
+        "ministero",
+        "società",
+        "i.",
+        "il",
+        "venire",
+        "lettera",
+        "si",
+        "posta",
+        "scrivere",
+        "a"
+      ],
+      "dominant_topic": 2,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "Le riforme del ministro Nasi",
+        "La Russia insiste per passare gli stretti.",
+        "Le gare ginnastiche tedesche e czeche di Maehrisch-Ostrau."
+      ]
+    },
+    "1": {
+      "size": 16,
+      "top_words": [
+        "ferri",
+        "turati",
+        "il",
+        "partito",
+        "si",
+        "ordine",
+        "perché",
+        "capo",
+        "tendenza",
+        "parigi"
+      ],
+      "dominant_topic": 0,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "IL CONGRESSO SOCIALISTA ITALIANO",
+        "I GENERALI BOERI e il Chamberlain",
+        "PALERMO UNITARIA"
+      ]
+    },
+    "2": {
+      "size": 24,
+      "top_words": [
+        "serbo",
+        "medico",
+        "camera",
+        "venire",
+        "ferito",
+        "congresso",
+        "il",
+        "a.",
+        "croato",
+        "diritto"
+      ],
+      "dominant_topic": 2,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "A ZAGABRIA",
+        "I GERMANIZZATORI A CONGRESSO",
+        "CONGRESSO DELLE CAMERE MEDICHE IN AUSTRIA."
+      ]
+    },
+    "3": {
+      "size": 4,
+      "top_words": [
+        "roma",
+        "imperatore",
+        "visita",
+        "rivolgare",
+        "n.",
+        "leva",
+        "telegrafano",
+        "berlino",
+        "patria",
+        "guglielmo"
+      ],
+      "dominant_topic": 6,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "GUGLIELMO II A ROMA",
+        "La svizzera autorizzata a batter nuova moneta.",
+        "Conferenza di ministri."
+      ]
+    },
+    "4": {
+      "size": 6,
+      "top_words": [
+        "scuola",
+        "italiano",
+        "tedesco",
+        "corso",
+        "tecnico",
+        "lingua",
+        "figlio",
+        "classe",
+        "numero",
+        "pom"
+      ],
+      "dominant_topic": 5,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "Congresso di tecnici edili.",
+        "ISTITUTO RAVÀ",
+        "COLLEGIO FEMMINILE UCCELLIS - UDINE\n(Anno XXXIV) Anno scolastico 1902-1903"
+      ]
+    }
+  }
+}

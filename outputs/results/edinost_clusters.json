@@ -1,0 +1,89 @@
+{
+  "method": "kmeans",
+  "n_clusters": 4,
+  "cluster_stats": {
+    "0": {
+      "size": 1,
+      "top_words": [
+        "dan",
+        "m.",
+        "nov",
+        "afera",
+        "staudinger",
+        "t.",
+        "gg.",
+        "suša",
+        "vipavsko",
+        "wallburg"
+      ],
+      "dominant_topic": 1,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "VESTI IZ KRANJSKE"
+      ]
+    },
+    "1": {
+      "size": 2,
+      "top_words": [
+        "šola",
+        "c.",
+        "slovenski",
+        "otrok",
+        "nemški",
+        "naš",
+        "imeti",
+        "laški",
+        "še",
+        "trst"
+      ],
+      "dominant_topic": 2,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "TRŽAŠKE VESTI",
+        "OGLASI IN REKLAME"
+      ]
+    },
+    "2": {
+      "size": 2,
+      "top_words": [
+        "ura",
+        "odbor",
+        "dan",
+        "tomaj",
+        "procesija",
+        "krčma",
+        "leten",
+        "vovk",
+        "obersnel",
+        "močen"
+      ],
+      "dominant_topic": 1,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "VESTI IZ OSTALE PRIMORSKE",
+        "BRZOJAVNA POROČILA"
+      ]
+    },
+    "3": {
+      "size": 2,
+      "top_words": [
+        "narod",
+        "ta",
+        "svoj",
+        "biti",
+        "italija",
+        "naroden",
+        "zastava",
+        "še",
+        "kanal",
+        "kateri"
+      ],
+      "dominant_topic": 4,
+      "dominant_sentiment": null,
+      "sample_titles": [
+        "SLAVNOST V KANALU",
+        "POLITIČNI PREGLED"
+      ]
+    }
+  }
+}

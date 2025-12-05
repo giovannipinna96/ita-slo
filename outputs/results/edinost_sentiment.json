@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "positive": 0,
+    "neutral": 6,
+    "negative": 1
+  },
+  "percentages": {
+    "positive": 0.0,
+    "neutral": 85.71428571428571,
+    "negative": 14.285714285714285
+  },
+  "avg_confidence": 0.7495194441905244,
+  "total_articles": 7,
+  "total_sentences_analyzed": 292,
+  "model_used": "classla/xlm-r-parlasent",
+  "analysis_mode": "sentence-level"
+}

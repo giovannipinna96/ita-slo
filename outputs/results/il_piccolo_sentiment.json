@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "positive": 18,
+    "neutral": 0,
+    "negative": 41
+  },
+  "percentages": {
+    "positive": 30.508474576271187,
+    "neutral": 0.0,
+    "negative": 69.49152542372882
+  },
+  "avg_confidence": 0.884538273025416,
+  "total_articles": 59,
+  "total_sentences_analyzed": 655,
+  "model_used": "MilaNLProc/feel-it-italian-sentiment",
+  "analysis_mode": "sentence-level"
+}
