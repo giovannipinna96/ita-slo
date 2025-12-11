@@ -283,8 +283,8 @@ class TopicModeler:
             embedding_model = "EMBEDDIA/sloberta"
             logger.info("Using SloBERTa for Slovenian text")
         elif language == 'it':
-            embedding_model = "paraphrase-multilingual-MiniLM-L12-v2"
-            logger.info("Using multilingual MiniLM for Italian text")
+            embedding_model = "dbmdz/bert-base-italian-cased"
+            logger.info("Using Italian BERT for Italian text")
         else:
             embedding_model = "paraphrase-multilingual-MiniLM-L12-v2"
             logger.info("Using multilingual MiniLM for multilingual text")
@@ -293,9 +293,38 @@ class TopicModeler:
 
         # Use KMeans for predictable number of topics (like LDA)
         from sklearn.cluster import KMeans
+        from sklearn.feature_extraction.text import CountVectorizer
         
         cluster_model = KMeans(n_clusters=num_topics, random_state=42, n_init=10)
         logger.info(f"Using KMeans clustering with {num_topics} clusters")
+        
+        # Load stopwords from spaCy
+        import spacy
+        try:
+            if language == 'sl':
+                nlp = spacy.load("sl_core_news_lg", disable=['parser', 'ner'])
+                logger.info("Loaded Slovenian stopwords from spaCy")
+            else:
+                nlp = spacy.load("it_core_news_lg", disable=['parser', 'ner'])
+                logger.info("Loaded Italian stopwords from spaCy")
+            
+            stopwords = list(nlp.Defaults.stop_words)
+            logger.info(f"Using {len(stopwords)} stopwords from spaCy")
+        except Exception as e:
+            logger.warning(f"Could not load spaCy stopwords: {e}. Using minimal list.")
+            # Fallback to minimal stopwords
+            if language == 'sl':
+                stopwords = ['in', 'je', 'da', 'na', 'se', 'za', 'so', 'ki', 'bi', 'pa', 'ali', 'po']
+            else:
+                stopwords = ['di', 'a', 'da', 'in', 'con', 'il', 'la', 'che', 'e', 'è', 'un', 'per']
+        
+        # Create vectorizer that filters stopwords and short words
+        vectorizer_model = CountVectorizer(
+            stop_words=stopwords,
+            min_df=1,
+            ngram_range=(1, 2),  # Include bigrams for better topics
+            token_pattern=r'\b[a-zA-ZàèéìòùÀÈÉÌÒÙčšžČŠŽ]{3,}\b'  # Only words with 3+ chars
+        )
 
         # Create BERTopic model with KMeans (no UMAP needed for small datasets)
         # Setting umap_model=None lets BERTopic skip dimensionality reduction
@@ -303,6 +332,7 @@ class TopicModeler:
             embedding_model=embedding_model,
             hdbscan_model=cluster_model,  # BERTopic accepts any sklearn clusterer here
             umap_model=None,  # Skip UMAP, use embeddings directly
+            vectorizer_model=vectorizer_model,  # Filter stopwords
             language='multilingual',
             calculate_probabilities=False,  # KMeans doesn't support soft clustering
             verbose=True
@@ -428,11 +458,33 @@ class TopicModeler:
         for topic_id, info in bertopic_info.items():
             topics[topic_id] = info['keywords']
 
+        # Get per-article topic assignments
+        article_topics = []
+        if self.bertopic_model is not None:
+            # Get texts for transform
+            texts = [a.content for a in articles if a.content]
+            try:
+                assigned_topics, probs = self.bertopic_model.transform(texts)
+                for i, (topic_id, article) in enumerate(zip(assigned_topics, articles)):
+                    topic_name = f"Topic {topic_id}"
+                    # Get topic name from topic info if available
+                    if str(topic_id) in bertopic_info:
+                        topic_name = bertopic_info[str(topic_id)].get('name', topic_name)
+                    
+                    article_topics.append({
+                        'article_idx': i,
+                        'topic': int(topic_id),
+                        'name': topic_name
+                    })
+            except Exception as e:
+                logger.warning(f"Could not get article topic assignments: {e}")
+
         results = {
             'topics': topics,
             'num_topics': len(topics),
             'n_articles': n_articles,
-            'method': 'bertopic'
+            'method': 'bertopic',
+            'article_topics': article_topics  # Per-article assignments
         }
 
         logger.info("BERTopic analysis complete")

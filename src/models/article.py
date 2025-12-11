@@ -35,7 +35,9 @@ class Article:
             raise ValueError("Article title cannot be empty")
         if not self.content or not self.content.strip():
             raise ValueError("Article content cannot be empty")
-        if self.source not in ['il_piccolo', 'edinost']:
+        # Accept sources containing 'piccolo' or 'edinost' (for new file formats)
+        source_lower = self.source.lower()
+        if 'piccolo' not in source_lower and 'edinost' not in source_lower:
             raise ValueError(f"Invalid source: {self.source}")
         if self.language not in ['it', 'sl']:
             raise ValueError(f"Invalid language: {self.language}")

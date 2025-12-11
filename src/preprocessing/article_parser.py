@@ -244,13 +244,18 @@ def _is_advertisement(title: str, content: str) -> bool:
     # Count ad keywords
     ad_keyword_count = sum(1 for keyword in ad_keywords if keyword in text_lower)
 
+    # Only consider as advertisement if content is short AND has ad keywords
+    # Long articles (>1000 chars) are unlikely to be pure advertisements
+    if len(content) > 1000:
+        return False
+    
     # If multiple ad keywords found, likely an advertisement
-    if ad_keyword_count >= 2:
+    if ad_keyword_count >= 3:  # Raised threshold
         return True
 
     # Check for price patterns (number followed by currency)
     price_pattern = re.compile(r'\d+\s*(cor\.|f\.|fiorini|corone|lire|centesimi)', re.IGNORECASE)
-    if len(price_pattern.findall(content)) >= 2:
+    if len(price_pattern.findall(content)) >= 3:  # Raised threshold
         return True
 
     return False
@@ -270,10 +275,7 @@ def validate_article(article: Article) -> bool:
     if not article.title or not article.content:
         return False
 
-    # Check minimum length
-    if len(article.content) < MIN_ARTICLE_LENGTH:
-        logger.warning(f"Article too short: '{article.title[:50]}...' ({len(article.content)} chars)")
-        return False
+    # No minimum length check - keep all articles
 
     # Check that content is not just whitespace
     if not article.content.strip():
@@ -290,24 +292,114 @@ def validate_article(article: Article) -> bool:
 def parse_and_validate(text: str, source: str) -> List[Article]:
     """
     Parse text and return only validated articles.
-
+    
+    Auto-detects format:
+    - If text contains '=== PAGINA' markers, uses old Il Piccolo parser
+    - Otherwise uses generic parser for new format
+    
     Args:
         text: Newspaper text
-        source: 'il_piccolo' or 'edinost'
-
+        source: Source identifier
+        
     Returns:
         List of validated Article objects
     """
-    if source == 'il_piccolo':
-        articles = parse_il_piccolo(text)
-    elif source == 'edinost':
-        articles = parse_edinost(text)
+    # Auto-detect format
+    if '=== PAGINA' in text:
+        # Old format with page markers
+        logger.info(f"Detected old format with page markers for {source}")
+        if 'piccolo' in source.lower():
+            articles = parse_il_piccolo(text)
+        else:
+            articles = parse_edinost(text)
     else:
-        raise ValueError(f"Invalid source: {source}")
-
+        # New format with === separators
+        logger.info(f"Detected new format for {source}")
+        articles = parse_generic(text, source)
+    
     # Validate articles
     valid_articles = [a for a in articles if validate_article(a)]
-
+    
     logger.info(f"Validated {len(valid_articles)}/{len(articles)} articles from {source}")
-
+    
     return valid_articles
+
+
+# Regex patterns for generic format (new files)
+GENERIC_ARTICLE_SEPARATOR = re.compile(r'^={3,}$', re.MULTILINE)
+GENERIC_SUBSECTION_SEPARATOR = re.compile(r'^-{3,}$', re.MULTILINE)
+
+# Header keywords to skip (newspaper masthead)
+HEADER_KEYWORDS = {
+    'EDINOST', 'IL PICCOLO', 'PICCOLO', 'GLASILO', 'UFFICI', 'TELEFONO',
+    'ABBONAMENTO', 'NAROČNINA', 'OGLASI', 'INSERZIONI', 'IZDAJATELJ',
+    'UREDNIŠTVO', 'REDAZIONE', 'AMMINISTRAZIONE', 'PAGINA', 'ANNUNCI',
+    'PUBBLICITÀ', 'OGLASI / ANNUNCI'
+}
+
+
+def parse_generic(text: str, source: str) -> List[Article]:
+    """
+    Parse newspaper text using generic separator-based format.
+    
+    Simply splits by === separators and creates an article from each section.
+    No filtering applied.
+    
+    Args:
+        text: Newspaper text
+        source: Source identifier (used for Article metadata)
+        
+    Returns:
+        List of Article objects
+    """
+    logger.info(f"Parsing {source} articles using generic parser")
+    
+    # Detect language from source name
+    language = 'sl' if 'edinost' in source.lower() else 'it'
+    
+    articles = []
+    
+    # Split by main article separators (===)
+    sections = GENERIC_ARTICLE_SEPARATOR.split(text)
+    
+    # Process all sections
+    for idx, section in enumerate(sections):
+        section = section.strip()
+        if not section:
+            continue
+        
+        # Extract title (first non-empty line)
+        lines = [l.strip() for l in section.split('\n') if l.strip()]
+        if not lines:
+            continue
+        
+        title = lines[0]
+        
+        # If title is too long, truncate it
+        if len(title) > 200:
+            title = title[:50] + "..."
+            content = '\n'.join(lines)
+        else:
+            content = '\n'.join(lines[1:]) if len(lines) > 1 else ''
+        
+        # If content is empty, use full section as content
+        if not content:
+            content = section
+        
+        # Create article
+        try:
+            article = Article(
+                title=title,
+                content=content,
+                source=source,
+                language=language
+            )
+            articles.append(article)
+            logger.debug(f"Extracted article {idx}: '{title[:40]}...' ({len(content)} chars)")
+        except ValueError as e:
+            logger.debug(f"Skipping section {idx}: {e}")
+    
+    logger.info(f"Extracted {len(articles)} articles from {source} using generic parser")
+    return articles
+
+

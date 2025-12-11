@@ -42,6 +42,41 @@ Questo progetto implementa una pipeline completa di analisi NLP per confrontare 
 
 Trieste nel 1902 era una città multiculturale dell'Impero Austro-Ungarico con una significativa presenza sia italiana che slovena. L'analisi di questi giornali permette di comprendere come le diverse comunità linguistiche rappresentavano gli eventi contemporanei.
 
+### Aggiornamenti Recenti (Dicembre 2025)
+
+#### 1. Nuovo Script `analyze_single.py`
+
+Script per analisi dettagliata di un singolo file con output per-articolo:
+
+```bash
+python analyze_single.py data/piccolo_19020217.txt --language it --use-bertopic
+```
+
+**Output generati per ogni articolo:**
+- `original_text.txt` - Testo originale
+- `analysis.json` - Sentiment, topics LDA/BERTopic, TF-IDF keywords
+- `sentiment_pie.png` - Pie chart sentiment
+- `topic_distribution_lda.png` / `topic_distribution_bertopic.png` - Topic charts
+- `wordcloud.png` - Word cloud
+
+#### 2. Supporto Nuovi Formati File
+
+Il parser ora riconosce automaticamente due formati:
+
+| Formato | Pattern Separatore | Esempio File |
+|---------|-------------------|--------------|
+| **Nuovo** | `===` (righe di uguale) | `piccolo_19020217.txt`, `edinost_19020217.txt` |
+| **Originale** | `=== PAGINA` markers | `il_piccolo_19020909_*.txt` |
+
+Il parser `parse_generic()` estrae ogni sezione tra separatori `===` come articolo distinto, senza filtri.
+
+#### 3. Miglioramenti BERTopic
+
+- **Embedding model italiano**: `dbmdz/bert-base-italian-cased` (prima era multilingue)
+- **Stopwords da spaCy**: Carica automaticamente ~300 stopwords italiane o ~200 slovene
+- **CountVectorizer configurato**: Filtra parole < 3 caratteri, include bigrams
+- **Per-article assignments**: Ogni articolo riceve topic_id + keywords nel JSON
+
 ---
 
 ## Architettura del Sistema

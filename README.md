@@ -139,6 +139,94 @@ outputs/my_comparison/
     └── ...
 ```
 
+---
+
+### 4. Analisi Singolo File (`analyze_single.py`) 🆕
+
+Analizza un singolo file di testo con output dettagliato per ogni articolo.
+
+#### Sintassi
+
+```bash
+python analyze_single.py <file> [opzioni]
+```
+
+#### Esempio
+
+```bash
+# Italiano con BERTopic
+python analyze_single.py data/piccolo_19020217.txt --language it --use-bertopic
+
+# Sloveno con BERTopic
+python analyze_single.py data/edinost_19020217.txt --language sl --use-bertopic
+```
+
+#### Parametri
+
+| Parametro | Descrizione | Default |
+|-----------|-------------|---------|
+| `file` | Percorso al file da analizzare (obbligatorio) | - |
+| `--language` `-l` | Lingua: `it` o `sl` | `it` |
+| `--use-bertopic` | Attiva BERTopic (richiede GPU) | `False` |
+| `--output` `-o` | Cartella di output | `outputs/single` |
+| `--num-topics` | Numero di topic per LDA/BERTopic | auto |
+
+#### Struttura Output
+
+```
+outputs/single/{filename}/
+├── global_results.json           # Risultati globali (sentiment, TF-IDF, topics)
+├── global_extreme_sentences.json # Frasi più positive/negative
+├── {name}_articles_sentiment_grid.png  # Griglia sentiment globale
+└── articles/                     # 📁 Cartella articoli
+    ├── 01/                       # Primo articolo
+    │   ├── original_text.txt     # Testo originale con titolo
+    │   ├── analysis.json         # Analisi completa (vedi sotto)
+    │   ├── sentiment_pie.png     # 🥧 Pie chart sentiment
+    │   ├── topic_distribution_lda.png      # 📊 Topics LDA
+    │   ├── topic_distribution_bertopic.png # 📊 Topics BERTopic
+    │   └── wordcloud.png         # ☁️ Word cloud
+    ├── 02/
+    └── ...
+```
+
+#### Contenuto `analysis.json` per Articolo
+
+```json
+{
+  "article_number": 1,
+  "title": "Titolo dell'articolo",
+  "content_length": 1560,
+  "language": "it",
+  "source": "piccolo_19020217",
+  "sentiment": {
+    "label": "negative",
+    "score": 0.92,
+    "distribution": {"positive": 0.1, "neutral": 0.1, "negative": 0.8},
+    "sentence_details": [...]
+  },
+  "topics_lda": [
+    {"topic_id": 0, "probability": 0.85},
+    {"topic_id": 2, "probability": 0.15}
+  ],
+  "topics_bertopic": {
+    "topic_id": 2,
+    "topic_name": "2_vienna_governo_ministro",
+    "keywords": ["vienna", "governo", "ministro", "austria", "politica"]
+  },
+  "tfidf_keywords": [["parola1", 0.73], ["parola2", 0.36]]
+}
+```
+
+#### Formati File Supportati
+
+Il parser riconosce automaticamente questi formati:
+
+| Pattern | Descrizione |
+|---------|-------------|
+| `piccolo_*.txt` / `edinost_*.txt` | Nuovo formato con separatori `===` |
+| `il_piccolo_*.txt` / `edinost_19020909*.txt` | Formato originale con marker `PAGINA` |
+
 #### Formato `*_extreme_sentences.json`
 
 Contiene le 10 frasi più positive e le 10 più negative con i relativi punteggi:
@@ -180,10 +268,12 @@ Contiene le 10 frasi più positive e le 10 più negative con i relativi punteggi
 
 ### Topic Modeling (BERTopic)
 
-| Lingua | Modello | Descrizione |
-|--------|---------|-------------|
-| 🇮🇹 Italiano | `paraphrase-multilingual-MiniLM-L12-v2` | Multilingue |
-| 🇸🇮 Sloveno | `EMBEDDIA/sloberta` | Specifico per sloveno |
+| Lingua | Embedding Model | Stopwords |
+|--------|-----------------|-----------|
+| 🇮🇹 Italiano | `dbmdz/bert-base-italian-cased` | spaCy `it_core_news_lg` (~300 parole) |
+| 🇸🇮 Sloveno | `EMBEDDIA/sloberta` | spaCy `sl_core_news_lg` (~200 parole) |
+
+> **Nota**: BERTopic usa KMeans per garantire un numero fisso di topic. Le stopwords vengono caricate automaticamente da spaCy.
 
 ---
 
