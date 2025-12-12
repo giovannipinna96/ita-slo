@@ -61,7 +61,7 @@ def load_italian_page(page_num: int) -> Tuple[str, List[Article]]:
     with open(page_path, 'r', encoding='utf-8') as f:
         text = f.read()
     
-    articles = parse_and_validate(text, f'il_piccolo_page{page_num}')
+    articles = parse_and_validate(text, f'il_piccolo_page{page_num}', language='it')
     
     return text, articles
 
@@ -324,8 +324,8 @@ def compare_two_sources(
         text2 = f.read()
     
     # Parse articles
-    articles1 = parse_and_validate(text1, name1.lower().replace(' ', '_'))
-    articles2 = parse_and_validate(text2, name2.lower().replace(' ', '_'))
+    articles1 = parse_and_validate(text1, name1.lower().replace(' ', '_'), language=language)
+    articles2 = parse_and_validate(text2, name2.lower().replace(' ', '_'), language=language)
     
     # Analyze both
     results1 = analyze_article_set(

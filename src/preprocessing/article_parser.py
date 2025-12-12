@@ -28,7 +28,7 @@ EXCLUDED_TITLE_WORDS = {
 }
 
 
-def parse_il_piccolo(text: str) -> List[Article]:
+def parse_il_piccolo(text: str, language: str = 'it') -> List[Article]:
     """
     Parse Il Piccolo newspaper text into individual articles.
 
@@ -36,6 +36,7 @@ def parse_il_piccolo(text: str) -> List[Article]:
 
     Args:
         text: Combined text from all 4 pages
+        language: Language code ('it' or 'sl') - passed from CLI
 
     Returns:
         List of Article objects
@@ -122,7 +123,7 @@ def parse_il_piccolo(text: str) -> List[Article]:
                 title=title,
                 content=content,
                 source='il_piccolo',
-                language='it',
+                language=language,
                 page=current_page
             )
 
@@ -135,7 +136,7 @@ def parse_il_piccolo(text: str) -> List[Article]:
     return articles
 
 
-def parse_edinost(text: str) -> List[Article]:
+def parse_edinost(text: str, language: str = 'sl') -> List[Article]:
     """
     Parse Edinost newspaper text into individual articles.
 
@@ -143,6 +144,7 @@ def parse_edinost(text: str) -> List[Article]:
 
     Args:
         text: Complete Edinost newspaper text
+        language: Language code ('it' or 'sl') - passed from CLI
 
     Returns:
         List of Article objects
@@ -209,7 +211,7 @@ def parse_edinost(text: str) -> List[Article]:
             title=title,
             content=content,
             source='edinost',
-            language='sl',
+            language=language,
             section=section
         )
 
@@ -289,7 +291,7 @@ def validate_article(article: Article) -> bool:
     return True
 
 
-def parse_and_validate(text: str, source: str) -> List[Article]:
+def parse_and_validate(text: str, source: str, language: str = 'it') -> List[Article]:
     """
     Parse text and return only validated articles.
     
@@ -300,22 +302,25 @@ def parse_and_validate(text: str, source: str) -> List[Article]:
     Args:
         text: Newspaper text
         source: Source identifier
+        language: Language code ('it' or 'sl') - always use this, ignore auto-detection
         
     Returns:
         List of validated Article objects
     """
+    logger.info(f"Parsing {source} with language={language}")
+    
     # Auto-detect format
     if '=== PAGINA' in text:
         # Old format with page markers
         logger.info(f"Detected old format with page markers for {source}")
         if 'piccolo' in source.lower():
-            articles = parse_il_piccolo(text)
+            articles = parse_il_piccolo(text, language=language)
         else:
-            articles = parse_edinost(text)
+            articles = parse_edinost(text, language=language)
     else:
         # New format with === separators
         logger.info(f"Detected new format for {source}")
-        articles = parse_generic(text, source)
+        articles = parse_generic(text, source, language=language)
     
     # Validate articles
     valid_articles = [a for a in articles if validate_article(a)]
@@ -338,7 +343,7 @@ HEADER_KEYWORDS = {
 }
 
 
-def parse_generic(text: str, source: str) -> List[Article]:
+def parse_generic(text: str, source: str, language: str = 'it') -> List[Article]:
     """
     Parse newspaper text using generic separator-based format.
     
@@ -348,14 +353,12 @@ def parse_generic(text: str, source: str) -> List[Article]:
     Args:
         text: Newspaper text
         source: Source identifier (used for Article metadata)
+        language: Language code ('it' or 'sl') - passed from CLI
         
     Returns:
         List of Article objects
     """
-    logger.info(f"Parsing {source} articles using generic parser")
-    
-    # Detect language from source name
-    language = 'sl' if 'edinost' in source.lower() else 'it'
+    logger.info(f"Parsing {source} articles using generic parser (language={language})")
     
     articles = []
     

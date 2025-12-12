@@ -27,12 +27,12 @@ def main():
 
     # Parse Il Piccolo
     logger.info("\n--- Parsing Il Piccolo ---")
-    piccolo_articles = parse_and_validate(piccolo_text, 'il_piccolo')
+    piccolo_articles = parse_and_validate(piccolo_text, 'il_piccolo', language='it')
     logger.info(f"Total articles extracted: {len(piccolo_articles)}")
 
     # Parse Edinost
     logger.info("\n--- Parsing Edinost ---")
-    edinost_articles = parse_and_validate(edinost_text, 'edinost')
+    edinost_articles = parse_and_validate(edinost_text, 'edinost', language='sl')
     logger.info(f"Total articles extracted: {len(edinost_articles)}")
 
     # Statistics

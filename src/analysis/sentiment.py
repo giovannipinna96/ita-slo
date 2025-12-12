@@ -24,9 +24,9 @@ logger = logging.getLogger(__name__)
 # Model configurations for different languages
 SENTIMENT_MODELS = {
     'it': {
-        'model_name': 'MilaNLProc/feel-it-italian-sentiment',
-        'description': 'Italian sentiment (FEEL-IT model, trained on Italian text)',
-        'labels': ['negative', 'positive'],  # Binary classification
+        'model_name': 'neuraly/bert-base-italian-cased-sentiment',
+        'description': 'Italian sentiment (3-class: positive/neutral/negative)',
+        'labels': ['negative', 'neutral', 'positive'],
         'task': 'sentiment-analysis'
     },
     'sl': {

@@ -73,8 +73,8 @@ def main():
 
     # Parse articles
     logger.info("\n--- Parsing articles ---")
-    piccolo_articles = parse_and_validate(piccolo_text, 'il_piccolo')
-    edinost_articles = parse_and_validate(edinost_text, 'edinost')
+    piccolo_articles = parse_and_validate(piccolo_text, 'il_piccolo', language='it')
+    edinost_articles = parse_and_validate(edinost_text, 'edinost', language='sl')
 
     logger.info(f"Extracted {len(piccolo_articles)} articles from Il Piccolo")
     logger.info(f"Extracted {len(edinost_articles)} articles from Edinost")

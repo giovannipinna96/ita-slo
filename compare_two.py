@@ -47,7 +47,7 @@ def analyze_file(file_path: str, name: str, language: str = 'it', use_bertopic: 
         text = f.read()
     
     # Parse articles
-    articles = parse_and_validate(text, name.lower().replace(' ', '_'))
+    articles = parse_and_validate(text, name.lower().replace(' ', '_'), language=language)
     logger.info(f"Found {len(articles)} articles/paragraphs")
     
     if not articles:
